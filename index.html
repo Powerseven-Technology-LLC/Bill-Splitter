@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>Bill Splitter Demo</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="javascript.js"></script>
+    </head>
+    <body>
+        <div>
+            <span>Participants:</span>
+            <input id="input-payer" type="text" placeholder="ACKJ" value="ACKJ" />
+            <button id="btn-payer" type="button" onclick="loadPayer()">Okay</button>
+        </div>
+        <br />
+        <form id="form">
+            <div>
+                <span>Item: </span><input id="input-name" type="text" />&emsp;
+                <span>Price: </span><input id="input-price" type="text" />&emsp;
+                <span>Quantity: </span><input id="input-quantity" type="text" value="1" />&emsp;
+                <span>Tax?</span><input id="input-taxable" name="tax" type="radio" /><label for="input-taxable">Yes</label>
+                <input id="input-nontaxable" name="tax" type="radio" checked /><label for="input-nontaxable">No</label>&emsp;
+                <span id="span-payer">Payer:
+                    <input id="input-payer-A" name="payer" type="checkbox" value="A" checked /><label for="input-payer-A">A</label>
+                    <input id="input-payer-C" name="payer" type="checkbox" value="C" checked /><label for="input-payer-C">C</label>
+                    <input id="input-payer-K" name="payer" type="checkbox" value="K" checked /><label for="input-payer-K">K</label>
+                    <input id="input-payer-J" name="payer" type="checkbox" value="J" checked /><label for="input-payer-J">J</label>
+                </span>&emsp;
+                <span>Add-on fee: </span><input id="input-addon" type="text" value="0" />&emsp;
+                <span>Deduction:</span><input id="input-discount" type="text" value="0" />
+            </div>
+            <hr />
+            <div>
+                <button id="btn-submit" type="submit">Submit</button>&emsp;
+                <button id="btn-reset" type="reset">Reset</button>&emsp;
+                <button id="btn-delete" type="button" onclick="delLastRow()">Delete last row</button>
+            </div>
+        </form>
+        <div>
+            <p id="p-payer">
+                A: <span id="outcome-A">0.00</span>&emsp;&emsp;
+                C: <span id="outcome-C">0.00</span>&emsp;&emsp;
+                K: <span id="outcome-K">0.00</span>&emsp;&emsp;
+                J: <span id="outcome-J">0.00</span>
+            </p>
+        </div>
+        <div>
+            <table id="table">
+                <tr>
+                    <td>Payer</td>
+                    <td>Item</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Tax</td>
+                    <td>Add-on fee</td>
+                    <td>Deduction</td>
+                    <td>Total price</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
